@@ -1,0 +1,128 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.productListWrapper {
+  display: flex;
+  margin-top: 5vw;
+  margin-inline: 9vw;
+
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1.4vw;
+
+    .productContainer {
+      border: 1px solid $baby-powder;
+      border-radius: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      width: 14em;
+      height: 29em;
+      transition: box-shadow 0.3s linear;
+      &:hover {
+        border: 1px solid $white;
+        box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0,
+          rgba(0, 0, 0, 0.1) 0 1px 20px 0;
+        .productAddToCart {
+          display: flex;
+        }
+      }
+      .productImage {
+        display: flex;
+        .img {
+          width: 14em;
+          height: 18em;
+          border-top-left-radius: 0.6rem;
+          border-top-right-radius: 0.6rem;
+        }
+        .favoriteButton {
+          outline: none;
+          border: none;
+          display: flex;
+          position: absolute;
+          box-shadow: rgba(25, 25, 25, 0.04) 0 0 7px 0,
+            rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+          font-size: 1.5vw;
+          border-radius: 50%;
+          margin-left: 10.5rem;
+          margin-top: 0.6rem;
+          background-color: $white;
+          padding-inline: 0.6rem;
+          padding-block: 0.5rem;
+        }
+        .favoriteIconFill {
+          color: $dark-orange;
+          font-size: 1.5rem;
+          border-radius: 50%;
+        }
+        .favoriteIcon {
+          color: $subtitle-text;
+          background-color: transparent;
+          font-size: 1.5rem;
+          border-radius: 50%;
+          &:hover {
+            color: $dark-orange;
+          }
+        }
+      }
+      .productCover {
+        padding: 0.5vw;
+        .productDesc {
+          .productTitle {
+            font-size: 0.8rem;
+            color: $jet;
+            line-height: 1.5rem;
+            font-weight: 700;
+          }
+          .productSubtitle {
+            margin-left: 0.2vw;
+            font-size: 0.8rem;
+            color: $subtitle-text;
+            line-height: 1.5rem;
+          }
+        }
+        .productRate {
+          .rate {
+            font-size: 0.9rem;
+          }
+        }
+        .productPrice {
+          margin-top: 0.8vw;
+          .priceText {
+            font-family: $secondary-font;
+            color: $orange;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+          }
+        }
+      }
+      .productAddToCart {
+        display: none;
+        margin-top: 2vh;
+        .addToCartButton {
+          display: flex;
+          outline: none;
+          border: none;
+          justify-content: center;
+          border-radius: 0.6rem;
+          margin-top: 0.6rem;
+          background-color: $spanish-orange;
+          color: $white;
+          padding-block: 0.3rem;
+          font-weight: 700;
+          font-size: 0.8rem;
+          line-height: 1.5rem;
+          margin-inline: auto;
+          cursor: pointer;
+          width: 13rem;
+          &:hover {
+            filter: brightness(0.9);
+          }
+        }
+      }
+    }
+  }
+}
