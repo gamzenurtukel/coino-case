@@ -1,0 +1,103 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.header {
+  height: 7vw;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 1px 20px 0;
+
+  .headerContainer {
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-inline: 10vw;
+
+    .headerTitle {
+      .headerText {
+        background: linear-gradient(to right, $eerie-black, $jet);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 600;
+        font-size: 1.9vw;
+        cursor: pointer;
+        line-height: 1.5rem;
+      }
+    }
+    .headerSearchBar {
+      display: flex;
+      flex-direction: row;
+      .inputSearch {
+        width: 36vw;
+        padding-block: 0.9vw;
+        outline: none;
+        border: none;
+        border-radius: 0.3rem;
+        background-color: $cultured;
+        padding-left: 1.2vw;
+
+        &:focus {
+          outline: 2px solid $dark-orange;
+          background-color: $white;
+        }
+      }
+      ::placeholder {
+        font-size: 0.9vw;
+        line-height: 1.5rem;
+      }
+      .seachIcon {
+        display: flex;
+        position: absolute;
+        font-size: 1.5vw;
+        margin-left: 35vw;
+        color: $dark-orange;
+        margin-top: 0.8vw;
+      }
+    }
+    .headerButtonRow {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5vw;
+
+      .rowButton {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        border: none;
+        background: transparent;
+        outline: none;
+        box-shadow: none;
+        font-size: 0.8vw;
+        font-weight: 600;
+        color: $eerie-black;
+        line-height: 1.5rem;
+        cursor: pointer;
+
+        .buttonBadge {
+          .buttonIcon {
+            display: flex;
+            font-size: 1.5vw;
+            margin-right: 0.3vw;
+          }
+          .buttonIconAfter {
+            display: none;
+          }
+        }
+        &:hover {
+          .buttonIcon {
+            display: none;
+          }
+          .buttonIconAfter {
+            display: flex;
+            font-size: 1.5vw;
+            margin-right: 0.3vw;
+          }
+          color: $dark-orange;
+        }
+        .buttonText {
+          margin-left: 0.3vw;
+        }
+      }
+    }
+  }
+}
