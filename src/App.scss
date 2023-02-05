@@ -1,3 +1,9 @@
-.App {
-  text-align: center;
+@import "./styles/fonts.scss";
+* {
+  font-family: $primary-font;
+}
+html,
+body {
+  margin-inline: 0;
+  padding: 0;
 }
