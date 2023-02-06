@@ -1,0 +1,96 @@
+@import "../../styles/colors.scss";
+
+.dropdown {
+  display: flex;
+  margin-inline: 10vw;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 2vw;
+
+  .dropdownInput {
+    width: 10rem;
+    border-radius: 0.6rem;
+    height: 2.6rem;
+    background-color: $white;
+    outline: none;
+    border: solid 0.5px $black-shadows;
+    line-height: 1.5rem;
+    text-indent: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+
+    .inputText {
+      font-weight: 375;
+    }
+    .arrowDownIcon {
+      margin-right: 1vw;
+      font-size: 1.1rem;
+    }
+  }
+  .dropdownMenu {
+    background-color: $white;
+    width: 13rem;
+    margin-top: 0.5vw;
+    border-radius: 0.6rem;
+    padding-inline: 1vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.1vw;
+    box-shadow: 4px 4px 20px rgba(225, 217, 232, 0.7);
+
+    .dropdownMenuUl {
+      padding-left: 0;
+      .dropdownMenuLi {
+        list-style: none;
+        height: 2.3vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-top: 0.5vw;
+
+        .dropdownItem {
+          width: 100vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding-right: 1.5vw;
+          padding-left: 1.5vw;
+          transition: 0.20001s;
+          border: none;
+          background: none;
+          color: $eerie-black;
+          font-weight: 500;
+
+          &:focus {
+            outline: none;
+          }
+          &:hover {
+            background-color: $peach-puff;
+            border-radius: 8px;
+            color: $orange;
+            .checkIcon {
+              visibility: visible;
+            }
+          }
+
+          .checkIcon {
+            font-size: 1.1vw;
+            visibility: hidden;
+          }
+        }
+        .checked {
+          background-color: $peach-puff;
+          border-radius: 8px;
+          color: $orange;
+          .checkIcon {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
