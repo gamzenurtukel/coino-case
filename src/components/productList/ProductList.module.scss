@@ -3,7 +3,7 @@
 
 .productListWrapper {
   display: flex;
-  margin-top: 5vw;
+  margin-block: 4vw;
   margin-inline: 9vw;
 
   .product {
@@ -101,7 +101,6 @@
       }
       .productAddToCart {
         display: none;
-        margin-top: 2vh;
         .addToCartButton {
           display: flex;
           outline: none;
