@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useAppDispatch } from "../../redux/hook";
 import { addToCart } from "../../redux/slices/cartSlice";
+import ShortInDropdown from "../sortInDropdown";
 
 type IProps = any[] | any;
 
@@ -25,6 +26,7 @@ const ProductList: React.FC = () => {
 
   return (
     <div className={style.productListWrapper}>
+      <ShortInDropdown />
       <div className={style.product}>
         {productList?.map((product: any) => (
           <div className={style.productContainer} key={product.id}>
