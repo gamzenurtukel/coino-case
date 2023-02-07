@@ -6,15 +6,27 @@ import { FiSearch } from "react-icons/fi";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
 import { getAllCart } from "../../redux/slices/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   const cartList = useSelector(getAllCart);
+
+  const cartButtonOnClick = () => {
+    navigate("/cart");
+  };
+
+  const headerTextOnClick = () => {
+    navigate("/");
+  };
 
   return (
     <div className={style.header}>
       <div className={style.headerContainer}>
         <div className={style.headerTitle}>
-          <p className={style.headerText}>Market App</p>
+          <p className={style.headerText} onClick={headerTextOnClick}>
+            Market App
+          </p>
         </div>
         <div className={style.headerSearchBar}>
           <input
@@ -35,7 +47,10 @@ function Header() {
             </Badge>
             <span className={style.buttonText}>Favorilerim</span>
           </button>
-          <button className={style.rowButton}>
+          <button
+            className={style.rowButton}
+            onClick={() => cartButtonOnClick()}
+          >
             <Badge
               badgeContent={cartList.length}
               className={style.buttonBadge}
