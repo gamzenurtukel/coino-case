@@ -4,8 +4,12 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { RiShoppingCart2Line, RiShoppingCart2Fill } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
 import Badge from "@mui/material/Badge";
+import { useSelector } from "react-redux";
+import { getAllCart } from "../../redux/slices/cartSlice";
 
 function Header() {
+  const cartList = useSelector(getAllCart);
+
   return (
     <div className={style.header}>
       <div className={style.headerContainer}>
@@ -33,7 +37,7 @@ function Header() {
           </button>
           <button className={style.rowButton}>
             <Badge
-              badgeContent={0}
+              badgeContent={cartList.length}
               className={style.buttonBadge}
               color="warning"
             >
