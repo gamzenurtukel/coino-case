@@ -1,13 +1,18 @@
 import style from "./CartProductList.module.scss";
 
 import { RiDeleteBinLine } from "react-icons/ri";
-import { getAllCart } from "../../redux/slices/cartSlice";
+import { getAllCart, deleteFromCart } from "../../redux/slices/cartSlice";
 import { useSelector } from "react-redux";
-import { Description } from "@mui/icons-material";
+import { useAppDispatch } from "../../redux/hook";
 
 type IProps = any[] | any;
 const CartProductList: React.FC = () => {
   const cartList: IProps = useSelector(getAllCart);
+  const dispatch = useAppDispatch();
+
+  const productDeleteFromCartButtonClick = (item: any) => {
+    dispatch(deleteFromCart(item));
+  };
 
   return (
     <div className={style.cartProductListWrapper}>
@@ -32,7 +37,10 @@ const CartProductList: React.FC = () => {
                 <div className={style.productPrice}>
                   <span className={style.priceText}>{item.price} $</span>
                 </div>
-                <button className={style.productDeleteFromCartButton}>
+                <button
+                  className={style.productDeleteFromCartButton}
+                  onClick={() => productDeleteFromCartButtonClick(item)}
+                >
                   <RiDeleteBinLine className={style.buttonIcon} />
                 </button>
               </div>
