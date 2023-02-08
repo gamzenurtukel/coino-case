@@ -1,0 +1,13 @@
+@mixin titleStyle {
+  font-size: 0.8rem;
+  color: $jet;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+@mixin subTitleStyle {
+  margin-left: 0.2vw;
+  font-size: 0.8rem;
+  color: $subtitle-text;
+  line-height: 1.5rem;
+}
