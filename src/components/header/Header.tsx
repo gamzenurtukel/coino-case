@@ -19,6 +19,9 @@ function Header() {
   const headerTextOnClick = () => {
     navigate("/");
   };
+  const favoriteButtonOnClick = () => {
+    navigate("/favorite");
+  };
 
   return (
     <div className={style.header}>
@@ -36,7 +39,10 @@ function Header() {
           <FiSearch className={style.seachIcon} />
         </div>
         <div className={style.headerButtonRow}>
-          <button className={style.rowButton}>
+          <button
+            className={style.rowButton}
+            onClick={() => favoriteButtonOnClick()}
+          >
             <Badge
               badgeContent={0}
               className={style.buttonBadge}
