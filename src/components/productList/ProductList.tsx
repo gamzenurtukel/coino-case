@@ -4,20 +4,28 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import Rating from "@mui/material/Rating";
 import { getAllProducts } from "../../redux/slices/productSlice";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import { useAppDispatch } from "../../redux/hook";
 import { addToCart } from "../../redux/slices/cartSlice";
 import ShortInDropdown from "../sortInDropdown";
+import {
+  addToFavorite,
+  deleteFromFavorite,
+  getAllFavorite,
+} from "../../redux/slices/favoriteSlice";
 
 type IProps = any[] | any;
 
 const ProductList: React.FC = () => {
-  const [isFavorite, setIsFavorite] = useState<Boolean>(false);
   const productList: IProps = useSelector(getAllProducts);
+  const favoriteList: IProps = useSelector(getAllFavorite);
   const dispatch = useAppDispatch();
 
-  const favoriteButtonOnClick = () => {
-    setIsFavorite(!isFavorite);
+  const favoriteButtonOnClick = (product: any) => {
+    dispatch(addToFavorite(product));
+  };
+
+  const deleteFavoriteButtonOnClick = (product: any) => {
+    dispatch(deleteFromFavorite(product.id));
   };
 
   const addToCartButton = (product: any) => {
@@ -32,14 +40,17 @@ const ProductList: React.FC = () => {
           <div className={style.productContainer} key={product.id}>
             <div className={style.productImage}>
               <img src={product.image} alt="product" className={style.img} />
-              <button
-                className={style.favoriteButton}
-                onClick={() => favoriteButtonOnClick()}
-              >
-                {isFavorite ? (
-                  <AiFillHeart className={style.favoriteIconFill} />
+              <button className={style.favoriteButton}>
+                {favoriteList.find((item: any) => item.id === product.id) ? (
+                  <AiFillHeart
+                    className={style.favoriteIconFill}
+                    onClick={() => deleteFavoriteButtonOnClick(product)}
+                  />
                 ) : (
-                  <AiOutlineHeart className={style.favoriteIcon} />
+                  <AiOutlineHeart
+                    className={style.favoriteIcon}
+                    onClick={() => favoriteButtonOnClick(product)}
+                  />
                 )}
               </button>
             </div>
