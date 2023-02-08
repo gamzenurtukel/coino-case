@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import ProductList from "./components/productList";
 import CartProductList from "./components/cartProductList";
+import FavoriteProductList from "./components/favoriteProductList";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductList />} />
         <Route path="/cart" element={<CartProductList />} />
+        <Route path="/favorite" element={<FavoriteProductList />} />
       </Routes>
     </div>
   );
