@@ -1,0 +1,50 @@
+@mixin cardContainerStyle {
+  border: 1px solid $baby-powder;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  width: 14em;
+  height: 29em;
+  transition: box-shadow 0.3s linear;
+  &:hover {
+    border: 1px solid $white;
+    box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0,
+      rgba(0, 0, 0, 0.1) 0 1px 20px 0;
+  }
+}
+
+@mixin cardButtonStyle {
+  display: flex;
+  outline: none;
+  border: none;
+  justify-content: center;
+  border-radius: 0.6rem;
+  margin-top: 0.6rem;
+  background-color: $spanish-orange;
+  color: $white;
+  padding-block: 0.3rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  margin-inline: auto;
+  cursor: pointer;
+  width: 13rem;
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+@mixin cartIconButtonStyle {
+  outline: none;
+  border: none;
+  display: flex;
+  position: absolute;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 7px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  font-size: 1.5vw;
+  border-radius: 50%;
+  margin-left: 10.5rem;
+  margin-top: 0.6rem;
+  background-color: $white;
+  padding-inline: 0.6rem;
+  padding-block: 0.5rem;
+}
