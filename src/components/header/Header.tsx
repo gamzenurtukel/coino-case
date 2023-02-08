@@ -7,10 +7,12 @@ import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
 import { getAllCart } from "../../redux/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
+import { getAllFavorite } from "../../redux/slices/favoriteSlice";
 
 function Header() {
   const navigate = useNavigate();
   const cartList = useSelector(getAllCart);
+  const favotiteList = useSelector(getAllFavorite);
 
   const cartButtonOnClick = () => {
     navigate("/cart");
@@ -44,7 +46,7 @@ function Header() {
             onClick={() => favoriteButtonOnClick()}
           >
             <Badge
-              badgeContent={0}
+              badgeContent={favotiteList.length}
               className={style.buttonBadge}
               color="warning"
             >
