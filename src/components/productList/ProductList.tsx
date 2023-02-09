@@ -83,6 +83,7 @@ const ProductList: React.FC = () => {
                 </span>
               </div>
               <div className={style.productRate}>
+                <span className={style.rateText}>{product.rating.rate}</span>
                 <Rating
                   className={style.rate}
                   name="half-rating-read"
