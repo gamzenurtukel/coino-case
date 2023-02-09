@@ -4,11 +4,14 @@ import { useState } from "react";
 import classNames from "classnames";
 import { dropdownMenuList } from "../../utils/DropdownMenuList";
 import { RiArrowUpSLine, RiArrowDownSLine, RiCheckLine } from "react-icons/ri";
+import { useAppDispatch } from "../../redux/hook";
+import { setSelectedSort } from "../../redux/slices/sortSlice";
 
 const ShortInDropdown = () => {
   const [hamburger, setHamburger] = useState<boolean>(false);
   const [interest, setInterest] = useState<string>("Sıralama");
   const [data, setData] = useState(dropdownMenuList);
+  const dispatch = useAppDispatch();
 
   const handleMenu = () => {
     setHamburger(!hamburger);
@@ -20,6 +23,7 @@ const ShortInDropdown = () => {
   };
 
   const clickCheck = (item: any) => {
+    dispatch(setSelectedSort(item));
     const newData = data.map((x: any) => {
       if (x.id === item.id) {
         return { ...x, isCheck: !x.isCheck };
