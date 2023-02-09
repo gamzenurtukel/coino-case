@@ -9,7 +9,7 @@ import {
 } from "../../redux/slices/cartSlice";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../redux/hook";
-import ModalDialog from "../modalDialog/ModalDialog";
+import ModalDialog from "../modalDialog";
 import { Row, Col } from "antd";
 import { useState } from "react";
 import { getAllProducts } from "../../redux/slices/productSlice";
