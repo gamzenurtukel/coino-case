@@ -1,13 +1,13 @@
 import style from "./ShortInDropdown.module.scss";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import { dropdownMenuList } from "../../utils/DropdownMenuList";
 import { RiArrowUpSLine, RiArrowDownSLine, RiCheckLine } from "react-icons/ri";
 import { useAppDispatch } from "../../redux/hook";
 import { setSelectedSort } from "../../redux/slices/sortSlice";
 
-const ShortInDropdown = () => {
+const ShortInDropdown: React.FC = () => {
   const [hamburger, setHamburger] = useState<boolean>(false);
   const [interest, setInterest] = useState<string>("Sıralama");
   const [data, setData] = useState(dropdownMenuList);
