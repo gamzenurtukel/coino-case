@@ -2,7 +2,6 @@
 
 .dropdown {
   display: flex;
-
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 2vw;
@@ -31,9 +30,11 @@
     }
   }
   .dropdownMenu {
+    position: absolute;
+    z-index: 9999;
     background-color: $white;
     width: 13rem;
-    margin-top: 0.5vw;
+    margin-top: 3.8vw;
     border-radius: 0.6rem;
     padding-inline: 1vw;
     padding-top: 0.5vw;
