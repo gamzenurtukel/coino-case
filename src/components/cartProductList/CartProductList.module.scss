@@ -7,88 +7,161 @@
   margin-bottom: 4vw;
   margin-inline: 9vw;
 
-  .wrapperContainer {
-    .containerMyCart {
-      .myCartText {
-        font-weight: 400;
-        font-size: 1.4vw;
-        line-height: 1.5rem;
+  .row {
+    display: flex;
+
+    .wrapperContainer {
+      .containerMyCart {
+        .myCartText {
+          font-weight: 400;
+          font-size: 1.4vw;
+          line-height: 1.5rem;
+        }
       }
-    }
-    .containerCartProducts {
-      .cartProduct {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-
-        .Product {
-          height: 9rem;
+      .containerCartProducts {
+        .cartProduct {
           display: flex;
-          align-items: center;
-          flex-direction: row;
-          padding-inline: 3vw;
-          border: 1px solid $baby-powder-light;
-          border-radius: 0.6rem;
-          background-color: transparent;
-          box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0,
-            rgba(0, 0, 0, 0.1) 0 1px 20px 0;
+          flex-direction: column;
+          gap: 1rem;
 
-          .productImage {
+          .Product {
+            height: 9rem;
             display: flex;
-            .image {
-              width: 5vw;
-              height: 6vw;
-            }
-          }
-          .productDescription {
-            margin-left: 3vw;
-            display: flex;
-            flex-direction: column;
-            width: 20vw;
-            gap: 0.5rem;
-            .titleText {
-              margin: 0;
-              font-size: 0.8rem;
-              color: $jet;
-              line-height: 1.5rem;
-              font-weight: 700;
-            }
-            .descriptionText {
-              margin: 0;
-              margin-left: 0.2vw;
-              font-size: 0.8rem;
-              color: $jet;
-              line-height: 1.5rem;
-            }
-          }
-          .productPrice {
-            margin-left: 15vw;
-            display: flex;
-            width: 7vw;
-            .priceText {
-              font-family: $secondary-font;
-              color: $orange;
-              font-weight: bold;
-              font-size: 1.2rem;
-              line-height: 1.5rem;
-            }
-          }
-          .productDeleteFromCartButton {
-            display: flex;
-            cursor: pointer;
-            border: none;
-            outline: none;
+            align-items: center;
+            flex-direction: row;
+            padding-inline: 3vw;
+            border: 1px solid $baby-powder-light;
+            border-radius: 0.6rem;
             background-color: transparent;
-            margin-left: 23vw;
-            font-size: 1.6vw;
+            box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0,
+              rgba(0, 0, 0, 0.1) 0 1px 20px 0;
+            justify-content: space-between;
 
-            .buttonIcon {
-              color: $subtitle-text;
-              &:hover {
-                color: $dark-orange;
+            .productImage {
+              display: flex;
+              .image {
+                width: 5vw;
+                height: 6vw;
               }
             }
+            .productDescription {
+              margin-left: 3vw;
+              display: flex;
+              flex-direction: column;
+              width: 20vw;
+              gap: 0.5rem;
+              .titleText {
+                margin: 0;
+                font-size: 0.8vw;
+                color: $jet;
+                line-height: 1.5rem;
+                font-weight: 700;
+              }
+              .descriptionText {
+                margin: 0;
+                margin-left: 0.2vw;
+                font-size: 0.8vw;
+                color: $jet;
+                line-height: 1.5rem;
+              }
+            }
+            .productQuantity {
+              display: flex;
+              border: 1px solid $baby-powder;
+              align-items: center;
+
+              .quantityButton {
+                background-color: $baby-powder;
+                border: none;
+                outline: none;
+                padding: 0.3rem;
+                padding-block: 0.6rem;
+                color: $orange;
+                &:hover {
+                  filter: brightness(0.9);
+                }
+                .buttonIcon {
+                }
+              }
+              .quantityText {
+                padding-inline: 1rem;
+                font-size: 0.8vw;
+              }
+            }
+            .productPrice {
+              display: flex;
+              width: 7vw;
+              justify-content: flex-end;
+              .priceText {
+                font-family: $secondary-font;
+                color: $orange;
+                font-weight: bold;
+                font-size: 1.2vw;
+                line-height: 1.5rem;
+              }
+            }
+            .productDeleteFromCartButton {
+              display: flex;
+              cursor: pointer;
+              border: none;
+              outline: none;
+              background-color: transparent;
+              font-size: 1.6vw;
+              .buttonIcon {
+                color: $subtitle-text;
+                &:hover {
+                  color: $dark-orange;
+                }
+              }
+            }
+            .modal {
+              display: none;
+            }
           }
+        }
+      }
+    }
+    .cartInformationContainer {
+      display: flex;
+      .cartInformation {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0,
+          rgba(0, 0, 0, 0.1) 0 1px 20px 0;
+        width: 20vw;
+        border: 1px solid $baby-powder-light;
+        border-radius: 0.6rem;
+        .informationTitle {
+          .titleText {
+            margin-top: 0;
+            font-size: 1.2vw;
+            font-weight: 500;
+            line-height: 1.5rem;
+          }
+        }
+        .orderDesciption {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid $black-shadows;
+          color: $subtitle-text;
+          align-items: center;
+          .textName {
+            font-size: 0.7vw;
+            font-weight: 500;
+          }
+          .textPrice {
+            font-weight: bold;
+            color: $jet;
+            font-size: 1vw;
+          }
+        }
+        .textPrice1 {
+          font-weight: bold;
+          color: $orange;
+          font-size: 1.3vw;
+          text-align: end;
+          margin-bottom: 0;
         }
       }
     }
