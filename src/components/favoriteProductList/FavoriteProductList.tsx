@@ -13,6 +13,7 @@ import informationImage from "../../image/favoriteProduct.png";
 import informationImage1 from "../../image/favoriteFillProduct.png";
 
 type IProps = any[] | any;
+
 const FavoriteProductList: React.FC = () => {
   const favoriteList: IProps = useSelector(getAllFavorite);
   const dispatch = useAppDispatch();
