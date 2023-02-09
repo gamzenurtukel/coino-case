@@ -1,0 +1,61 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+@mixin buttonStyle($background, $color, $bordercolor) {
+  font-family: $primary-font;
+  background-color: $background;
+  border: 1px solid $bordercolor;
+  color: $color;
+  text-transform: none;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-inline: 0.8rem;
+  padding-block: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.dialog {
+  display: flex;
+  justify-content: center;
+
+  .dialogTitle {
+    text-align: center;
+    padding: 1rem;
+    font-family: $primary-font;
+    font-size: 1.1rem;
+    color: $jet;
+    font-weight: bold;
+  }
+  .dialogContent {
+    padding: 1rem;
+    color: $subtitle-text;
+    font-size: 0.8rem;
+  }
+  .dialogActions {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 0.5rem;
+
+    .deleteButton {
+      @include buttonStyle(transparent, $black-shadows, $black-shadows);
+
+      &:hover {
+        background-color: transparent;
+        color: $orange;
+        border: 1px solid $orange;
+      }
+    }
+    .favoriteAndDeleteButton {
+      @include buttonStyle($orange, $white, $orange);
+
+      &:hover {
+        background-color: $orange;
+        color: $white;
+        border: 1px solid $orange;
+        filter: brightness(1.1);
+      }
+    }
+  }
+}
