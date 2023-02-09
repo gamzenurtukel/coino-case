@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { message } from "antd";
 
 interface cartState {
   cartList: any[];
@@ -20,6 +21,7 @@ const cartSlice = createSlice({
         product.quantity++;
       } else {
         state.cartList.push({ ...action.payload, quantity: 1 });
+        message.success("Ürün sepete eklendi");
       }
     },
     deleteFromCart: (state, action: PayloadAction<cartState>) => {
