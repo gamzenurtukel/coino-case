@@ -12,12 +12,14 @@ import {
   deleteFromFavorite,
   getAllFavorite,
 } from "../../redux/slices/favoriteSlice";
+import { selectedSort } from "../../redux/slices/sortSlice";
 
 type IProps = any[] | any;
 
 const ProductList: React.FC = () => {
   const productList: IProps = useSelector(getAllProducts);
   const favoriteList: IProps = useSelector(getAllFavorite);
+  const selectedSortValue: IProps = useSelector(selectedSort);
   const dispatch = useAppDispatch();
 
   const favoriteButtonOnClick = (product: any) => {
@@ -32,11 +34,30 @@ const ProductList: React.FC = () => {
     dispatch(addToCart(product));
   };
 
+  const deneme = [...productList];
+
+  if (selectedSortValue.id === 1) {
+    deneme.sort((a: any, b: any) => {
+      return a.price >= b.price ? 1 : -1;
+    });
+  }
+
+  if (selectedSortValue.id === 2) {
+    deneme.sort((a: any, b: any) => {
+      return a.price <= b.price ? 1 : -1;
+    });
+  }
+  if (selectedSortValue.id === 3) {
+    deneme.sort((a: any, b: any) => {
+      return a.rating.rate <= b.rating.rate ? 1 : -1;
+    });
+  }
+
   return (
     <div className={style.productListWrapper}>
       <ShortInDropdown />
       <div className={style.product}>
-        {productList?.map((product: any) => (
+        {deneme?.map((product: any) => (
           <div className={style.productContainer} key={product.id}>
             <div className={style.productImage}>
               <img src={product.image} alt="product" className={style.img} />
