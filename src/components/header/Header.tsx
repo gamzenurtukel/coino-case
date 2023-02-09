@@ -9,7 +9,7 @@ import { getAllCart } from "../../redux/slices/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { getAllFavorite } from "../../redux/slices/favoriteSlice";
 
-function Header() {
+const Header: React.FC = () => {
   const navigate = useNavigate();
   const cartList = useSelector(getAllCart);
   const favotiteList = useSelector(getAllFavorite);
@@ -73,6 +73,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
