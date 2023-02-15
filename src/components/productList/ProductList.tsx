@@ -34,21 +34,21 @@ const ProductList: React.FC = () => {
     dispatch(addToCart(product));
   };
 
-  const deneme = [...productList];
+  const shortProductList = [...productList];
 
   if (selectedSortValue.id === 1) {
-    deneme.sort((a: any, b: any) => {
+    shortProductList.sort((a: any, b: any) => {
       return a.price >= b.price ? 1 : -1;
     });
   }
 
   if (selectedSortValue.id === 2) {
-    deneme.sort((a: any, b: any) => {
+    shortProductList.sort((a: any, b: any) => {
       return a.price <= b.price ? 1 : -1;
     });
   }
   if (selectedSortValue.id === 3) {
-    deneme.sort((a: any, b: any) => {
+    shortProductList.sort((a: any, b: any) => {
       return a.rating.rate <= b.rating.rate ? 1 : -1;
     });
   }
@@ -57,7 +57,7 @@ const ProductList: React.FC = () => {
     <div className={style.productListWrapper}>
       <ShortInDropdown />
       <div className={style.product}>
-        {deneme?.map((product: any) => (
+        {shortProductList?.map((product: any) => (
           <div className={style.productContainer} key={product.id}>
             <div className={style.productImage}>
               <img src={product.image} alt="product" className={style.img} />
